@@ -10,6 +10,6 @@ class Payconn
     {
         $factory = new GatewayFactory();
 
-        return call_user_func_array(array($factory, $method), $parameters);
+        return call_user_func_array([$factory, $method], $parameters);
     }
 }
