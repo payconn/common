@@ -1,6 +1,6 @@
 <?php
 
-namespace PayConn;
+namespace Payconn;
 
 class Payconn
 {
