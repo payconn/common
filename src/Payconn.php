@@ -2,7 +2,6 @@
 
 namespace PayConn;
 
-class PayConn
+class Payconn
 {
-
 }

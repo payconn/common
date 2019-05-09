@@ -1,6 +1,6 @@
 {
   "autoload": {
-    "psr-4": {"PayConn\\Common\\": "src/"},
+    "psr-4": {"Payconn\\Common\\": "src/"},
     "classmap": ["src/PayConn.php"]
   },
   "require": {
