@@ -2,5 +2,8 @@
   "autoload": {
     "psr-4": {"PayConn\\Common\\": "src/"},
     "classmap": ["src/PayConn.php"]
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
   }
 }
