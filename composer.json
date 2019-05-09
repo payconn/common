@@ -4,6 +4,7 @@
     "classmap": ["src/Payconn.php"]
   },
   "require": {
-    "guzzlehttp/guzzle": "^6.3"
+    "guzzlehttp/guzzle": "^6.3",
+    "symfony/http-foundation": "^4.2"
   }
 }
