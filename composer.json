@@ -17,12 +17,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Payconn\\Common\\": "src/"
+      "Payconn\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Payconn\\Common\\Tests\\": "tests/"
+      "Payconn\\Tests\\": "tests/"
     }
   },
   "require-dev": {
