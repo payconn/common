@@ -2,7 +2,7 @@
 
 namespace Payconn\Common;
 
-use Payconn\Common\Exception\NotFoundException;
+use Payconn\Common\Exception\NotFoundClassException;
 
 abstract class AbstractGateway implements GatewayInterface
 {
@@ -22,7 +22,7 @@ abstract class AbstractGateway implements GatewayInterface
     public function createRequest(string $class, array $parameters): RequestInterface
     {
         if (!class_exists($class)) {
-            throw new NotFoundException('Method class not found');
+            throw new NotFoundClassException('Method class not found');
         }
 
         return new $class($this->token, $this->httpClient);
