@@ -8,12 +8,9 @@ abstract class AbstractRequest implements RequestInterface
 
     private $token;
 
-    public function __construct(TokenInterface $token, HttpClientInterface $httpClient = null)
+    public function __construct(TokenInterface $token, HttpClientInterface $httpClient)
     {
         $this->token = $token;
-        if (!$httpClient) {
-            $httpClient = new HttpClient();
-        }
         $this->httpClient = $httpClient;
     }
 
