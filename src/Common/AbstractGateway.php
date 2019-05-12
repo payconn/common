@@ -25,6 +25,6 @@ abstract class AbstractGateway implements GatewayInterface
             throw new NotFoundClassException('Method class not found');
         }
 
-        return new $class($this->token, $this->httpClient);
+        return new $class($this->token, $this->httpClient, $parameters);
     }
 }
