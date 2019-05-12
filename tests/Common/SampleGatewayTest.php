@@ -12,9 +12,12 @@ class SampleGatewayTest extends TestCase
     public function testAuthorize()
     {
         $token = new Token('payconn', '1234567');
+        $creditCard = new CreditCard('Murat SAC', '4111111111111111', '2023', '08', '123');
         $gateway = new Gateway($token);
         $response = $gateway->authorize([
-            'creditCard' => new CreditCard('Murat SAC', '4111111111111111', '2023', '08', '123'),
+            'creditCard' => $creditCard,
+            'price' => 100,
+            'installment' => 3,
         ]);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
