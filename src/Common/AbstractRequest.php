@@ -29,8 +29,8 @@ abstract class AbstractRequest implements RequestInterface
         return $this->token;
     }
 
-    public function getCreditCard(): ?CreditCard
+    public function getCreditCard(): CreditCard
     {
-        return $this->parameters->get('creditCard');
+        return $this->parameters->get('creditCard', new CreditCard());
     }
 }
