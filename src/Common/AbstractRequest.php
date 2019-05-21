@@ -10,7 +10,7 @@ abstract class AbstractRequest implements RequestInterface
 
     private $token;
 
-    private $parameters;
+    protected $parameters;
 
     public function __construct(TokenInterface $token, HttpClientInterface $httpClient, array $parameters)
     {
