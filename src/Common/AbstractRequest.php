@@ -3,14 +3,14 @@
 namespace Payconn\Common;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\Request;
 
 abstract class AbstractRequest implements RequestInterface
 {
+    protected $parameters;
     private $httpClient;
 
     private $token;
-
-    protected $parameters;
 
     public function __construct(TokenInterface $token, HttpClientInterface $httpClient, array $parameters)
     {
@@ -29,8 +29,18 @@ abstract class AbstractRequest implements RequestInterface
         return $this->token;
     }
 
+    public function getIpAddress(): string
+    {
+        return (Request::createFromGlobals())->getClientIp();
+    }
+
     public function getCreditCard(): ?CreditCard
     {
         return $this->parameters->get('creditCard');
+    }
+
+    public function isTestMode(): bool
+    {
+        return (bool) $this->parameters->get('testMode', false);
     }
 }
