@@ -10,6 +10,10 @@
 [Payconn](https://payconn.org) is a framework agnostic, multi-gateway payment
 processing library for PHP. This package implements common classes required by Payconn.
 
+## Installation
+
+    composer require payconn/common:~1.2
+
 ## Change log
 
 Please see [UPGRADE](UPGRADE.md) for more information on how to upgrade to the latest version.

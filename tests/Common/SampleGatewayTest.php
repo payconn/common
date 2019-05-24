@@ -20,7 +20,7 @@ class SampleGatewayTest extends TestCase
             'installment' => 3,
         ]);
         $this->assertTrue($response->isSuccessful());
-        $this->assertFalse($response->isRedirect());
+        $this->assertFalse($response->isRedirection());
         $this->assertEquals('Successful', $response->getResponseMessage());
         $this->assertEquals('00', $response->getResponseCode());
         $this->assertEmpty($response->getRedirectForm());
