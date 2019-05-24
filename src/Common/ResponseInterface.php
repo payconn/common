@@ -12,7 +12,7 @@ interface ResponseInterface
 
     public function getResponseBody(): array;
 
-    public function isRedirect(): bool;
+    public function isRedirection(): bool;
 
-    public function getRedirectForm(): string;
+    public function redirect(): void;
 }
