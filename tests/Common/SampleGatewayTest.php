@@ -23,7 +23,6 @@ class SampleGatewayTest extends TestCase
         $this->assertFalse($response->isRedirection());
         $this->assertEquals('Successful', $response->getResponseMessage());
         $this->assertEquals('00', $response->getResponseCode());
-        $this->assertEmpty($response->getRedirectForm());
         $this->assertArrayHasKey('ReturnCode', $response->getResponseBody());
         $this->assertArrayHasKey('ReturnMessage', $response->getResponseBody());
     }
