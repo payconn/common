@@ -14,5 +14,5 @@ interface ResponseInterface
 
     public function isRedirection(): bool;
 
-    public function redirect(): void;
+    public function getRedirectForm(): string;
 }
