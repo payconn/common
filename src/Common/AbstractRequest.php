@@ -34,7 +34,7 @@ abstract class AbstractRequest implements RequestInterface
         return (Request::createFromGlobals())->getClientIp();
     }
 
-    public function getCreditCard(): ?CreditCard
+    public function getCreditCard(): CreditCard
     {
         return $this->parameters->get('creditCard');
     }
@@ -42,5 +42,10 @@ abstract class AbstractRequest implements RequestInterface
     public function isTestMode(): bool
     {
         return (bool) $this->parameters->get('testMode', false);
+    }
+
+    public function getEndpoint(): string
+    {
+        return $this->parameters->get('endpoint');
     }
 }
