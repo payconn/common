@@ -8,5 +8,5 @@ interface EndpointInterface
 
     public function getBaseUrl(): string;
 
-    public function getSecureBaseUrl(): string;
+    public function getBaseSecureUrl(): string;
 }
