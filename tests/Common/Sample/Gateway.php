@@ -38,4 +38,14 @@ class Gateway extends AbstractGateway
     {
         throw new NotSupportedMethodException('Refund not supported');
     }
+
+    public function getBaseUrl(bool $testMode = false): string
+    {
+        return 'BASE_URL';
+    }
+
+    public function getBaseSecureUrl(bool $testMode = false): string
+    {
+        return 'BASE_SECURE_URL';
+    }
 }
