@@ -48,5 +48,4 @@ class Gateway extends AbstractGateway
     {
         return 'BASE_SECURE_URL';
     }
-
 }
