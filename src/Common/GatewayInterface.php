@@ -17,4 +17,8 @@ interface GatewayInterface
     public function void(ModelInterface $model): ResponseInterface;
 
     public function refund(ModelInterface $model): ResponseInterface;
+
+    public function getBaseUrl(bool $testMode = false): string;
+
+    public function getBaseSecureUrl(bool $testMode = false): string;
 }
