@@ -26,7 +26,7 @@ abstract class AbstractModel implements ModelInterface
         return $this->token;
     }
 
-    public function setTestMode(bool $testMode): self
+    public function setTestMode(bool $testMode): ModelInterface
     {
         $this->testMode = $testMode;
 
@@ -43,7 +43,7 @@ abstract class AbstractModel implements ModelInterface
         return $this->creditCard;
     }
 
-    public function setCreditCard(CreditCard $creditCard): self
+    public function setCreditCard(CreditCard $creditCard): ModelInterface
     {
         $this->creditCard = $creditCard;
 
@@ -55,7 +55,7 @@ abstract class AbstractModel implements ModelInterface
         return $this->currency;
     }
 
-    public function setCurrency(string $currency): self
+    public function setCurrency(string $currency): ModelInterface
     {
         $this->currency = $currency;
 
@@ -67,7 +67,7 @@ abstract class AbstractModel implements ModelInterface
         return $this->amount;
     }
 
-    public function setAmount($amount): self
+    public function setAmount($amount): ModelInterface
     {
         $this->amount = $amount;
 
@@ -79,7 +79,7 @@ abstract class AbstractModel implements ModelInterface
         return $this->baseUrl;
     }
 
-    public function setBaseUrl(string $baseUrl): self
+    public function setBaseUrl(string $baseUrl): ModelInterface
     {
         $this->baseUrl = $baseUrl;
 

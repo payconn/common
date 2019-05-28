@@ -39,13 +39,8 @@ class Gateway extends AbstractGateway
         throw new NotSupportedMethodException('Refund not supported');
     }
 
-    public function getBaseUrl(bool $testMode = false): string
+    public function overrideBaseUrl(ModelInterface $model): void
     {
-        return 'BASE_URL';
-    }
-
-    public function getBaseSecureUrl(bool $testMode = false): string
-    {
-        return 'BASE_SECURE_URL';
+        $model->setBaseUrl('BASE_URL');
     }
 }
