@@ -4,9 +4,11 @@ namespace Payconn\Common;
 
 abstract class AbstractModel implements ModelInterface
 {
-    protected $token = false;
+    protected $testMode = false;
 
-    protected $testMode;
+    protected $baseUrl;
+
+    protected $token;
 
     protected $creditCard;
 
@@ -68,6 +70,18 @@ abstract class AbstractModel implements ModelInterface
     public function setAmount($amount): self
     {
         $this->amount = $amount;
+
+        return $this;
+    }
+
+    public function getBaseUrl(): string
+    {
+        return $this->baseUrl;
+    }
+
+    public function setBaseUrl(string $baseUrl): self
+    {
+        $this->baseUrl = $baseUrl;
 
         return $this;
     }
