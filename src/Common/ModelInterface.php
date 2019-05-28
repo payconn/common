@@ -8,7 +8,11 @@ interface ModelInterface
 
     public function getToken(): TokenInterface;
 
-    public function setTestMode(bool $testMode);
+    public function setTestMode(bool $testMode): self;
 
     public function isTestMode(): bool;
+
+    public function setBaseUrl(string $baseUrl): self;
+
+    public function getBaseUrl(): string;
 }
