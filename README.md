@@ -3,16 +3,13 @@
 **Core components for the Payconn PHP payment processing library**
 
 [![Build Status](https://travis-ci.com/payconn/common.svg?branch=master)](https://travis-ci.com/payconn/common)
-[![GitHub forks](https://img.shields.io/github/forks/payconn/common.svg?style=plastic)](https://github.com/payconn/common/network)
-[![GitHub stars](https://img.shields.io/github/stars/payconn/common.svg)](https://github.com/payconn/common/stargazers)
-[![GitHub license](https://img.shields.io/github/license/payconn/common.svg)](https://github.com/payconn/common)
 
-[Payconn](https://payconn.org) is a framework agnostic, multi-gateway payment
+[Payconn](https://github.com/payconn/common) is a framework agnostic, multi-gateway payment
 processing library for PHP. This package implements common classes required by Payconn.
 
 ## Installation
 
-    composer require payconn/common:~1.2
+    composer require payconn/common:~1.2.5
 
 ## Change log
 
