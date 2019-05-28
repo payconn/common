@@ -33,4 +33,9 @@ abstract class AbstractRequest implements RequestInterface
     {
         return (Request::createFromGlobals())->getClientIp();
     }
+
+    public function getModel(): ModelInterface
+    {
+        return $this->model;
+    }
 }
