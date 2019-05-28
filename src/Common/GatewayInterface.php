@@ -4,17 +4,17 @@ namespace Payconn\Common;
 
 interface GatewayInterface
 {
-    public function createRequest(string $class, array $parameters): RequestInterface;
+    public function createRequest(string $class, ModelInterface $model): RequestInterface;
 
-    public function authorize(array $parameters): ResponseInterface;
+    public function authorize(ModelInterface $model): ResponseInterface;
 
-    public function authorizeComplete(array $parameters): ResponseInterface;
+    public function authorizeComplete(ModelInterface $model): ResponseInterface;
 
-    public function purchase(array $parameters): ResponseInterface;
+    public function purchase(ModelInterface $model): ResponseInterface;
 
-    public function purchaseComplete(array $parameters): ResponseInterface;
+    public function purchaseComplete(ModelInterface $model): ResponseInterface;
 
-    public function void(array $parameters): ResponseInterface;
+    public function void(ModelInterface $model): ResponseInterface;
 
-    public function refund(array $parameters): ResponseInterface;
+    public function refund(ModelInterface $model): ResponseInterface;
 }

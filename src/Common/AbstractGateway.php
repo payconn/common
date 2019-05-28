@@ -19,12 +19,12 @@ abstract class AbstractGateway implements GatewayInterface
         $this->token = $token;
     }
 
-    public function createRequest(string $class, array $parameters): RequestInterface
+    public function createRequest(string $class, ModelInterface $model): RequestInterface
     {
         if (!class_exists($class)) {
             throw new NotFoundClassException('Method class not found');
         }
 
-        return new $class($this->token, $this->httpClient, $parameters);
+        return new $class($this->token, $this->httpClient, $model);
     }
 }

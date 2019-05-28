@@ -4,36 +4,37 @@ namespace Payconn\Tests\Common\Sample;
 
 use Payconn\Common\AbstractGateway;
 use Payconn\Common\Exception\NotSupportedMethodException;
+use Payconn\Common\ModelInterface;
 use Payconn\Common\ResponseInterface;
 
 class Gateway extends AbstractGateway
 {
-    public function authorize(array $parameters): ResponseInterface
+    public function authorize(ModelInterface $model): ResponseInterface
     {
-        return ($this->createRequest(AuthorizeRequest::class, $parameters))->send();
+        return ($this->createRequest(AuthorizeRequest::class, $model))->send();
     }
 
-    public function authorizeComplete(array $parameters): ResponseInterface
+    public function authorizeComplete(ModelInterface $model): ResponseInterface
     {
         throw new NotSupportedMethodException('Authorize complete not supported');
     }
 
-    public function purchase(array $parameters): ResponseInterface
+    public function purchase(ModelInterface $model): ResponseInterface
     {
         throw new NotSupportedMethodException('Purchase not supported');
     }
 
-    public function purchaseComplete(array $parameters): ResponseInterface
+    public function purchaseComplete(ModelInterface $model): ResponseInterface
     {
         throw new NotSupportedMethodException('Purchase complete not supported');
     }
 
-    public function void(array $parameters): ResponseInterface
+    public function void(ModelInterface $model): ResponseInterface
     {
         throw new NotSupportedMethodException('Void not supported');
     }
 
-    public function refund(array $parameters): ResponseInterface
+    public function refund(ModelInterface $model): ResponseInterface
     {
         throw new NotSupportedMethodException('Refund not supported');
     }
