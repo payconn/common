@@ -29,11 +29,6 @@ class Gateway extends AbstractGateway
         throw new NotSupportedMethodException('Purchase complete not supported');
     }
 
-    public function void(ModelInterface $model): ResponseInterface
-    {
-        throw new NotSupportedMethodException('Void not supported');
-    }
-
     public function refund(ModelInterface $model): ResponseInterface
     {
         throw new NotSupportedMethodException('Refund not supported');
