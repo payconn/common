@@ -14,8 +14,6 @@ interface GatewayInterface
 
     public function purchaseComplete(ModelInterface $model): ResponseInterface;
 
-    public function void(ModelInterface $model): ResponseInterface;
-
     public function refund(ModelInterface $model): ResponseInterface;
 
     public function overrideBaseUrl(ModelInterface $model): void;

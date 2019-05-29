@@ -62,7 +62,7 @@ abstract class AbstractModel implements ModelInterface
         return $this;
     }
 
-    public function getAmount(): float
+    public function getAmount(): ?float
     {
         return $this->amount;
     }
