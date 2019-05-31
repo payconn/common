@@ -16,7 +16,7 @@ interface ResponseInterface
 
     public function isRedirection(): bool;
 
-    public function getRedirectForm(): string;
+    public function getRedirectForm(): ?string;
 
     public function getModel(): ModelInterface;
 }

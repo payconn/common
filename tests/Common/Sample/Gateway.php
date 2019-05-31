@@ -3,39 +3,45 @@
 namespace Payconn\Tests\Common\Sample;
 
 use Payconn\Common\AbstractGateway;
-use Payconn\Common\Exception\NotSupportedMethodException;
-use Payconn\Common\ModelInterface;
+use Payconn\Common\BaseUrl;
+use Payconn\Common\Model\AuthorizeInterface;
+use Payconn\Common\Model\CancelInterface;
+use Payconn\Common\Model\CompleteInterface;
+use Payconn\Common\Model\PurchaseInterface;
+use Payconn\Common\Model\RefundInterface;
 use Payconn\Common\ResponseInterface;
 
 class Gateway extends AbstractGateway
 {
-    public function authorize(ModelInterface $model): ResponseInterface
+    public function authorize(AuthorizeInterface $authorize): ResponseInterface
     {
-        return ($this->createRequest(AuthorizeRequest::class, $model))->send();
+        return $this->createRequest(AuthorizeRequest::class, $authorize);
     }
 
-    public function authorizeComplete(ModelInterface $model): ResponseInterface
+    public function purchase(PurchaseInterface $purchase): ResponseInterface
     {
-        throw new NotSupportedMethodException('Authorize complete not supported');
+        // TODO: Implement purchase() method.
     }
 
-    public function purchase(ModelInterface $model): ResponseInterface
+    public function complete(CompleteInterface $complete): ResponseInterface
     {
-        throw new NotSupportedMethodException('Purchase not supported');
+        // TODO: Implement purchaseComplete() method.
     }
 
-    public function purchaseComplete(ModelInterface $model): ResponseInterface
+    public function refund(RefundInterface $refund): ResponseInterface
     {
-        throw new NotSupportedMethodException('Purchase complete not supported');
+        // TODO: Implement refund() method.
     }
 
-    public function refund(ModelInterface $model): ResponseInterface
+    public function cancel(CancelInterface $model): ResponseInterface
     {
-        throw new NotSupportedMethodException('Refund not supported');
+        // TODO: Implement cancel() method.
     }
 
-    public function overrideBaseUrl(ModelInterface $model): void
+    public function initialize(): void
     {
-        $model->setBaseUrl('BASE_URL');
+        $this->setBaseUrl((new BaseUrl())
+            ->setProdUrls('API_URL', 'SECURE_URL')
+            ->setTestUrls('API_URL', 'SECURE_URL'));
     }
 }

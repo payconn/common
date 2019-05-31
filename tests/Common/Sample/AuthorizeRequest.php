@@ -9,7 +9,7 @@ class AuthorizeRequest extends AbstractRequest
 {
     public function send(): ResponseInterface
     {
-        return new AuthorizeResponse(new \Payconn\Tests\Common\Sample\Authorize(new Token('username', 'pass')), [
+        return new AuthorizeResponse(new \Payconn\Tests\Common\Sample\Authorize(), [
             'StatusCode' => '00',
             'ReturnCode' => '00',
             'ReturnMessage' => 'Successful',
