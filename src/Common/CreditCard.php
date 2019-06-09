@@ -17,8 +17,8 @@ class CreditCard
     public function __construct($number, $expireYear, $expireMonth, $cvv)
     {
         $this->number = $number;
-        $this->expireYear = $expireYear;
-        $this->expireMonth = $expireMonth;
+        $this->expireYear = \DateTime::createFromFormat('Y', $expireYear);
+        $this->expireMonth = \DateTime::createFromFormat('m', $expireMonth);
         $this->cvv = $cvv;
     }
 
@@ -27,12 +27,12 @@ class CreditCard
         return $this->number;
     }
 
-    public function getExpireYear(): string
+    public function getExpireYear(): \DateTime
     {
         return $this->expireYear;
     }
 
-    public function getExpireMonth(): string
+    public function getExpireMonth(): \DateTime
     {
         return $this->expireMonth;
     }
