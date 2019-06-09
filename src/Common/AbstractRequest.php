@@ -29,7 +29,7 @@ abstract class AbstractRequest implements RequestInterface
         return $this->token;
     }
 
-    public function getIpAddress(): ?string
+    public function getIpAddress(): string
     {
         $clientIp = (Request::createFromGlobals())->getClientIp();
         if (!$clientIp) {
