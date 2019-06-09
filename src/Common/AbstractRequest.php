@@ -31,7 +31,12 @@ abstract class AbstractRequest implements RequestInterface
 
     public function getIpAddress(): ?string
     {
-        return (Request::createFromGlobals())->getClientIp();
+        $clientIp = (Request::createFromGlobals())->getClientIp();
+        if (!$clientIp) {
+            $clientIp = '127.0.0.1';
+        }
+
+        return $clientIp;
     }
 
     public function getModel(): ModelInterface
