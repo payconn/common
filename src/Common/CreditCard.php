@@ -27,14 +27,14 @@ class CreditCard
         return $this->number;
     }
 
-    public function getExpireYear(): \DateTime
+    public function getExpireYear($format = 'y'): string
     {
-        return $this->expireYear;
+        return $this->expireYear->format($format);
     }
 
-    public function getExpireMonth(): \DateTime
+    public function getExpireMonth($format = 'm'): string
     {
-        return $this->expireMonth;
+        return $this->expireMonth->format($format);
     }
 
     public function getCvv(): string
