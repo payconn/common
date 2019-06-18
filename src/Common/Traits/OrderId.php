@@ -15,4 +15,9 @@ trait OrderId
     {
         $this->orderId = $orderId;
     }
+
+    public function generateOrderId(): string
+    {
+        $this->setOrderId(md5(uniqid(mt_rand(), true)).time());
+    }
 }
