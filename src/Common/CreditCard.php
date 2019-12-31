@@ -18,7 +18,7 @@ class CreditCard
     {
         $this->number = $number;
         $this->expireYear = \DateTime::createFromFormat('Y', $expireYear);
-        $this->expireMonth = \DateTime::createFromFormat('m', $expireMonth);
+        $this->expireMonth = \DateTime::createFromFormat('!m', $expireMonth);
         $this->cvv = $cvv;
     }
 
