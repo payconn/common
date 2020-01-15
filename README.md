@@ -9,7 +9,7 @@ processing library for PHP. This package implements common classes required by P
 
 ## Installation
 
-    composer require payconn/common:~1.3.2
+    composer require payconn/common
 
 ## Change log
 
