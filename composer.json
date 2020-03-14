@@ -37,10 +37,5 @@
     "phpunit/phpunit": "^7.3",
     "phpstan/phpstan": "^0.11.2",
     "vimeo/psalm": "^3.9"
-  },
-  "config": {
-    "platform": {
-      "php": "7.1.3"
-    }
   }
 }
