@@ -2,23 +2,25 @@
 
 namespace Payconn\Common;
 
+use Payconn\Common\Exception\InvalidArgumentException;
+
 class CreditCard
 {
-    private $holderName;
+    private string $holderName;
 
-    private $number;
+    private string $number;
 
-    private $expireYear;
+    private \DateTime $expireYear;
 
-    private $expireMonth;
+    private \DateTime $expireMonth;
 
-    private $cvv;
+    private string $cvv;
 
-    public function __construct($number, $expireYear, $expireMonth, $cvv)
+    public function __construct(string $number, string $expireYear, string $expireMonth, string $cvv)
     {
         $this->number = $number;
-        $this->expireYear = \DateTime::createFromFormat('Y', $expireYear);
-        $this->expireMonth = \DateTime::createFromFormat('!m', $expireMonth);
+        $this->expireYear = $this->createDateFromFormat('Y', $expireYear);
+        $this->expireMonth = $this->createDateFromFormat('!m', $expireMonth);
         $this->cvv = $cvv;
     }
 
@@ -27,12 +29,12 @@ class CreditCard
         return $this->number;
     }
 
-    public function getExpireYear($format = 'y'): string
+    public function getExpireYear(string $format = 'y'): string
     {
         return $this->expireYear->format($format);
     }
 
-    public function getExpireMonth($format = 'm'): string
+    public function getExpireMonth(string $format = 'm'): string
     {
         return $this->expireMonth->format($format);
     }
@@ -52,5 +54,16 @@ class CreditCard
         $this->holderName = $holderName;
 
         return $this;
+    }
+
+    private function createDateFromFormat(string $format, string $date): \DateTime
+    {
+        $dateTime = \DateTime::createFromFormat($format, $date);
+
+        if (!$dateTime) {
+            throw new InvalidArgumentException('Card expiration date is invalid');
+        }
+
+        return $dateTime;
     }
 }

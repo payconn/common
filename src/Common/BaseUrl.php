@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class BaseUrl
 {
-    private $urls;
+    private ParameterBag $urls;
 
     public function __construct()
     {
@@ -32,7 +32,7 @@ class BaseUrl
         return $this;
     }
 
-    public function setTestUrls(string $api, string $secure)
+    public function setTestUrls(string $api, string $secure): self
     {
         $this->urls->set('test', [
             'api' => $api,

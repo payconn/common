@@ -6,9 +6,9 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 abstract class AbstractResponse implements ResponseInterface
 {
-    protected $parameters;
+    protected ParameterBag $parameters;
 
-    protected $model;
+    protected ModelInterface $model;
 
     public function __construct(ModelInterface $model, array $parameters)
     {

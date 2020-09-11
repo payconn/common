@@ -4,9 +4,9 @@ namespace Payconn\Common;
 
 abstract class AbstractModel implements ModelInterface
 {
-    protected $testMode = false;
+    protected bool $testMode = false;
 
-    protected $baseUrl;
+    protected string $baseUrl;
 
     public function setTestMode(bool $testMode): ModelInterface
     {
