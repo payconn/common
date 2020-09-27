@@ -6,11 +6,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 abstract class AbstractRequest implements RequestInterface
 {
-    protected ModelInterface $model;
+    protected $model;
 
-    private HttpClientInterface $httpClient;
+    private $httpClient;
 
-    private TokenInterface $token;
+    private $token;
 
     public function __construct(TokenInterface $token, HttpClientInterface $httpClient, ModelInterface $model)
     {

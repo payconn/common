@@ -7,11 +7,11 @@ use Payconn\Common\Model\AuthorizeInterface;
 
 abstract class AbstractGateway implements GatewayInterface
 {
-    private HttpClientInterface $httpClient;
+    private $httpClient;
 
-    private TokenInterface $token;
+    private $token;
 
-    private BaseUrl $baseUrl;
+    private $baseUrl;
 
     public function __construct(TokenInterface $token, HttpClientInterface $httpClient = null)
     {

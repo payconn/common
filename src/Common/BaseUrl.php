@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class BaseUrl
 {
-    private ParameterBag $urls;
+    private $urls;
 
     public function __construct()
     {

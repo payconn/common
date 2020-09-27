@@ -2,25 +2,23 @@
 
 namespace Payconn\Common;
 
-use Payconn\Common\Exception\InvalidArgumentException;
-
 class CreditCard
 {
-    private string $holderName;
+    private $holderName;
 
-    private string $number;
+    private $number;
 
-    private \DateTime $expireYear;
+    private $expireYear;
 
-    private \DateTime $expireMonth;
+    private $expireMonth;
 
-    private string $cvv;
+    private $cvv;
 
     public function __construct(string $number, string $expireYear, string $expireMonth, string $cvv)
     {
         $this->number = $number;
-        $this->expireYear = $this->createDateFromFormat('Y', $expireYear);
-        $this->expireMonth = $this->createDateFromFormat('!m', $expireMonth);
+        $this->expireYear = \DateTime::createFromFormat('Y', $expireYear);
+        $this->expireMonth = \DateTime::createFromFormat('!m', $expireMonth);
         $this->cvv = $cvv;
     }
 
@@ -54,16 +52,5 @@ class CreditCard
         $this->holderName = $holderName;
 
         return $this;
-    }
-
-    private function createDateFromFormat(string $format, string $date): \DateTime
-    {
-        $dateTime = \DateTime::createFromFormat($format, $date);
-
-        if (!$dateTime) {
-            throw new InvalidArgumentException('Card expiration date is invalid');
-        }
-
-        return $dateTime;
     }
 }
