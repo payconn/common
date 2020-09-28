@@ -23,7 +23,7 @@ abstract class AbstractGateway implements GatewayInterface
         $this->baseUrl = new BaseUrl();
     }
 
-    public function setBaseUrl(BaseUrl $baseUrl)
+    public function setBaseUrl(BaseUrl $baseUrl): self
     {
         $this->baseUrl = $baseUrl;
 

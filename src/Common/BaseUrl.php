@@ -32,7 +32,7 @@ class BaseUrl
         return $this;
     }
 
-    public function setTestUrls(string $api, string $secure)
+    public function setTestUrls(string $api, string $secure): self
     {
         $this->urls->set('test', [
             'api' => $api,
